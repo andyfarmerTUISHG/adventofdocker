@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SECRET_MESSAGE=Hello Docker from Docker Compose!
+      - PORT=8080
+    volumes:
+      - mydata:/go/data
+    networks:
+      - myapp-network
+volumes:
+  mydata:
+networks:
+  myapp-network:
